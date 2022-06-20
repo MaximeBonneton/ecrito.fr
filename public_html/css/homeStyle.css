@@ -1,0 +1,12 @@
+#currentEcrito{
+    display: flex;
+
+}
+
+.cell{
+    border: 1px #1a2874 solid;
+    border-radius: 10px;
+    padding : 1em;
+    margin: 10px;
+    width: 300px;
+}

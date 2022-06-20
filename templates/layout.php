@@ -3,10 +3,17 @@
     <head>
         <meta charset="utf-8"/>
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <link rel="stylesheet" href=""/>
-        <title>EcritO</title>
+        <link rel="stylesheet" href="css/mainStyle.css"/>
+        <link rel="stylesheet" href="css/headerStyle.css"/>
+        <link rel="stylesheet" href="css/footerStyle.css"/>
+        <link rel="stylesheet" href="css/<?=$pageStyle?>.css"/>
+        <title><?= $pageTitle;?></title>
     </head>
     <body>
-        <?= $content;?>
+        <?= $header;?>
+        <div id="block_page">
+            <?= $content;?>
+        </div>
+        <?= $footer;?>
     </body>
 </html>

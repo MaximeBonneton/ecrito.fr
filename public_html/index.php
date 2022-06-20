@@ -1,6 +1,27 @@
-<?php require('../src/model.php') ?>
+<?php 
+//Charging controllers
+require_once('../src/controllers/home.php');
+require_once('../src/controllers/ecrito.php');
+require_once('../src/controllers/addEcrito.php');
 
-<?php $enabledTitles = getEnableEcrito(); ?>
 
-<?php require('../templates/home.php') ?>
-<?php require('../templates/layout.php') ?>
+if(isset($_GET['action']) && $_GET['action'] !== '') {
+    if($_GET['action']==='ecrito'){
+        if(isset($_GET['id']) && $_GET['id'] > 0) {
+            $ecritoID = $_GET['id'];
+            ecrito($ecritoID);
+        } else {
+            echo "Erreur : Aucun identifiant d'ecrito envoyé.";
+            die;
+        }
+    } elseif($_GET['action']==='addEcrito'){
+        addEcrito();
+    }
+    else{
+        echo "Erreur : La page que vous cherchez n'existe pas.";
+    }
+} else{
+    home();
+}
+
+?>

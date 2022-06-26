@@ -3,7 +3,16 @@
 <?php 
 function addEcrito(){
 
-    require('../templates/addEcrito.php');
+    if(isset($_POST['title']) && $_POST['text'] !== '' &&
+    isset($_POST['text']) && $_POST['text'] !== '') {
+
+        pushEcrito($_POST['title'],$_POST['text'],2);
+        require('../templates/submitedEcrito.php');
+    }
+    else{
+        require('../templates/addEcrito.php');
+    }
+
 
 }
 ?>

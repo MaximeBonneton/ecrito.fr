@@ -93,6 +93,28 @@ function getComments($user_id){
 ?>
 
 <?php
+function pushEcrito($title,$text,$user_id){
+    //We connect to the database
+    try{
+        $database = new PDO('mysql:host=localhost;dbname=ecrito-database;charset=utf8',
+            'root','titou2000',[PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION]);
+    }
+    catch (Exception $e) {
+        die('Erreur :' . $e->getMessage());
+    }
+
+    //
+    $sqlQuery = 'INSERT INTO ecrito (title,core_text,user_id) VALUES (:title, :core_text, :user_id)';
+    $statement = $database->prepare($sqlQuery);
+    $statement->execute([
+        'title' => $title,
+        ':core_text' => $text,
+        'user_id' => $user_id
+    ]);
+}
+?>
+
+<?php
 if(isset($_GET['is_enabled'])){
     $sqlQuery = 'SELECT * FROM ecrito WHERE is_enabled= :is_enabled';
 

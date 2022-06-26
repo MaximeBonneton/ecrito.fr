@@ -1,5 +1,6 @@
 #currentEcrito{
     display: flex;
+    flex-wrap: wrap;
 
 }
 
@@ -9,4 +10,10 @@
     padding : 1em;
     margin: 10px;
     width: 300px;
+}
+
+.cell p
+{
+    height: 190px;
+    overflow: clip;
 }

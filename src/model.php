@@ -108,7 +108,7 @@ function pushEcrito($title,$text,$user_id){
     $statement = $database->prepare($sqlQuery);
     $statement->execute([
         'title' => $title,
-        ':core_text' => $text,
+        'core_text' => $text,
         'user_id' => $user_id
     ]);
 }

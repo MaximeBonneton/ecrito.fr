@@ -18,3 +18,27 @@ body{
     grid-row: 2;
     padding: 5%;
 }
+
+/* ------------------------ Login & Sign up ---------------------- */
+
+.fog
+{
+    position: fixed;
+    opacity: 0.5;
+    background-color: gray;
+    height: 100%;
+    width: 100%;
+}
+
+#login
+{
+    position: fixed;
+    top: 40vh;
+    left: 40vw;
+    background-color: white;
+    height: 300px;
+    width: 300px;
+    border-radius: 50px;
+    border: #1a2874 solid 1px;
+    padding: 2%;
+}

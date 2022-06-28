@@ -1,9 +1,11 @@
-<?php 
+<?php
+session_start();
+
 //Charging controllers
 require_once('../src/controllers/home.php');
 require_once('../src/controllers/ecrito.php');
 require_once('../src/controllers/addEcrito.php');
-
+require_once('../src/controllers/login.php');
 
 if(isset($_GET['action']) && $_GET['action'] !== '') {
     if($_GET['action']==='ecrito'){
@@ -16,12 +18,13 @@ if(isset($_GET['action']) && $_GET['action'] !== '') {
         }
     } elseif($_GET['action']==='addEcrito'){
         addEcrito();
-    }
-    else{
+    } else{
         echo "Erreur : La page que vous cherchez n'existe pas.";
     }
 } else{
     home();
 }
+
+
 
 ?>

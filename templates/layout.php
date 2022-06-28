@@ -15,5 +15,6 @@
             <?= $content;?>
         </div>
         <?= $footer;?>
+        <?php if(isset($cover)) echo $cover ?>
     </body>
 </html>

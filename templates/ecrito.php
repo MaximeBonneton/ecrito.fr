@@ -14,5 +14,10 @@ $pageStyle="ecritoStyle";?>
             <p><?= htmlspecialchars($comment['name']);?> : <?= nl2br(htmlspecialchars($comment['text']));?></p>
         <?php } ?>
     </div>
+    <form action="" method="post">
+            <p>Ajouter un commentaire :</p>
+            <textarea name="cmt" id="comment"></textarea>
+            <input type="submit"/>
+    </form>
 </section>
 <?php $content = ob_get_clean(); ?>

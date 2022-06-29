@@ -20,15 +20,16 @@ if(isset($_GET['action']) && $_GET['action'] !== '') {
         addEcrito();
     } elseif($_GET['action']==='login'){
         login();
+    } elseif($_GET['action']==='disconnect'){
+        $_SESSION['name'] = NULL;
+        $_SESSION['id'] = NULL;
+        home();
     } else{
         echo "Erreur : La page que vous cherchez n'existe pas.";
     }
 } else{
     home();
 }
-
-
-
 
 
 ?>

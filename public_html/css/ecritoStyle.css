@@ -5,3 +5,9 @@
     margin: 10px;
     text-align: center;
 }
+
+textarea
+{
+    width: 90%;
+    height: 100px;
+}

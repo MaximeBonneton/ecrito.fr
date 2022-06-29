@@ -4,8 +4,17 @@
 <?php 
 function ecrito($ecritoID){
   
+    //If we post a commment we verfy if the user is connected
+    if(isset($_POST['cmt'])) {
+        if(isset($_SESSION['id']) && isset($_SESSION['name'])){
+            pushComment($_POST['cmt'],$_SESSION['id'],$ecritoID);
+        } else {
+            login();
+        }
+    }
+
     $ecrito = getEcrito($ecritoID);
-    $comments = getComments($ecrito['id']);
+    $comments = getCommentsFromEcrito($ecritoID);
     require('../templates/ecrito.php');
 
     //Charging layout, header and footer

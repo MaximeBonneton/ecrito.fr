@@ -7,7 +7,7 @@ function addEcrito(){
     if(isset($_POST['title']) && $_POST['text'] !== '' &&
     isset($_POST['text']) && $_POST['text'] !== '') {
 
-        pushEcrito($_POST['title'],$_POST['text'],2);
+        pushEcrito($_POST['title'],$_POST['text'],$_SESSION['id']);
         require('../templates/submitedEcrito.php');
     }
     else{

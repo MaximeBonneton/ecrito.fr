@@ -5,14 +5,14 @@
 
             <li><a href="/">Accueil</a></li>
 
-            <?php if(isset($_SESSION['name']) && isset($_SESSION['pwd'])) { ?>
+            <?php if(isset($_SESSION['name']) && isset($_SESSION['id'])) { ?>
                 <li><a href="#">Mes créations</a></li>
                 <li><a href="/?action=addEcrito">Créer un ecrito</a></li>
             <?php } ?>   
 
             <li>
-                <?php if(isset($_SESSION['name']) && isset($_SESSION['pwd'])) { ?>
-                    <a href="#">Compte </a>
+                <?php if(isset($_SESSION['name']) && isset($_SESSION['id'])) { ?>
+                    <a href="/?action=disconnect">Déconnection </a>
                 <?php }else{ ?>
                     <a href="/?action=login">Se connecter </a>
                 <?php } ?>

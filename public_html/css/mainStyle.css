@@ -42,3 +42,12 @@ body{
     border: #1a2874 solid 1px;
     padding: 2%;
 }
+
+.close
+{
+    position: absolute;
+    top : 5%;
+    right: 10%;
+    color: #1a2874;
+    text-decoration: none;
+}

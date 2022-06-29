@@ -1,10 +1,13 @@
 <?php 
-$coverStyle="loginStyle";?>
+$pageTitle="Ecrito - Login";
+$coverStyle="loginStyle";
+?>
 
 
 <?php ob_start();?>
 <div class=fog></div>
 <form id="login" action="" method="post">
+    <p>Connecte toi :</p>
     <div>
         <label for="pseudo">Pseudo :</label><br/>
         <input type="text" id="pseudo" name="name"/>

@@ -9,21 +9,25 @@ require_once('../src/controllers/login.php');
 
 if(isset($_GET['action']) && $_GET['action'] !== '') {
     if($_GET['action']==='ecrito'){
-        if(isset($_GET['id']) && $_GET['id'] > 0) {
+        if(isset($_GET['id']) && $_GET['id'] > 0){
             $ecritoID = $_GET['id'];
             ecrito($ecritoID);
-        } else {
+        } else{
             echo "Erreur : Aucun identifiant d'ecrito envoyé.";
             die;
         }
     } elseif($_GET['action']==='addEcrito'){
         addEcrito();
+    } elseif($_GET['action']==='login'){
+        login();
     } else{
         echo "Erreur : La page que vous cherchez n'existe pas.";
     }
 } else{
     home();
 }
+
+
 
 
 

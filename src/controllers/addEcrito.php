@@ -1,7 +1,8 @@
-<?php require_once('../src/model.php') ?>
+<?php require_once('../src/ecritosModel.php') ?>
 
 <?php 
 function addEcrito(){
+
 
     if(isset($_POST['title']) && $_POST['text'] !== '' &&
     isset($_POST['text']) && $_POST['text'] !== '') {

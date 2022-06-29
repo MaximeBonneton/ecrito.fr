@@ -2,10 +2,22 @@
 <header>
     <nav>
         <ul id="navList">
-            <li><a href="/">Accueil</a></li>        
-            <li><a href="#">Les plus vues</a></li>
-            <li><a href="/?action=addEcrito">Créer un ecrito</a></li>
-            <li><a href="#">Compte</a></li>           
+
+            <li><a href="/">Accueil</a></li>
+
+            <?php if(isset($_SESSION['name']) && isset($_SESSION['pwd'])) { ?>
+                <li><a href="#">Mes créations</a></li>
+                <li><a href="/?action=addEcrito">Créer un ecrito</a></li>
+            <?php } ?>   
+
+            <li>
+                <?php if(isset($_SESSION['name']) && isset($_SESSION['pwd'])) { ?>
+                    <a href="#">Compte </a>
+                <?php }else{ ?>
+                    <a href="/?action=login">Se connecter </a>
+                <?php } ?>
+            </li>     
+
         </ul>
     </nav>
 </header>

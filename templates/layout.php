@@ -12,7 +12,7 @@
     <body>
         <?= $header;?>
         <div id="block_page">
-            <?= $content;?>
+        <?php if(isset($content)) echo $content ?>
         </div>
         <?= $footer;?>
         <?php if(isset($cover)) echo $cover ?>

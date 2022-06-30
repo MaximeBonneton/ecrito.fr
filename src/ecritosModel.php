@@ -1,5 +1,6 @@
 <?php
 
+
 function getEnabledEcritos(){
 
     //We retrieve all the enabled ecrito (with prepare and execute function)

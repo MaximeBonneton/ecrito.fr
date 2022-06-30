@@ -38,7 +38,9 @@ try{
         home();
     }
 } catch (Exception $e){
-    echo "Erreur : ".$e->getMessage();
+    $errorMessage = $e->getMessage();
+    require_once('../templates/error.php');   
+    require_once('../templates/layout.php');
 }
 
 

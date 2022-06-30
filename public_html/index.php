@@ -7,29 +7,40 @@ require_once('../src/controllers/ecrito.php');
 require_once('../src/controllers/addEcrito.php');
 require_once('../src/controllers/login.php');
 
-if(isset($_GET['action']) && $_GET['action'] !== '') {
-    if($_GET['action']==='ecrito'){
-        if(isset($_GET['id']) && $_GET['id'] > 0){
-            $ecritoID = $_GET['id'];
-            ecrito($ecritoID);
-        } else{
-            echo "Erreur : Aucun identifiant d'ecrito envoyé.";
-            die;
+
+try{
+    //Select the page to show
+    if(isset($_GET['action']) && $_GET['action'] !== '') {
+        //Page show one specific ecrito
+        if($_GET['action']==='ecrito'){
+            //Verif the id of the ecrito
+            if(isset($_GET['id']) && $_GET['id'] > 0){
+                $ecritoID = $_GET['id'];
+                ecrito($ecritoID);
+            } else{ // If problem with the ID, stop the process and report an error
+                throw new Exception("Aucun identifiant d'ecrito envoyé.");
+            }
+        // Page add a ecrito
+        } elseif($_GET['action']==='addEcrito'){
+            addEcrito();
+        // Page with the cover "login"
+        } elseif($_GET['action']==='login'){
+            login();
+        // Disconnect the current user
+        } elseif($_GET['action']==='disconnect'){
+            $_SESSION['name'] = NULL;
+            $_SESSION['id'] = NULL;
+            home();
+        } else{ //If no correct action, stop the process and report an error
+            throw new Exception("La page que vous cherchez n'existe pas.");
         }
-    } elseif($_GET['action']==='addEcrito'){
-        addEcrito();
-    } elseif($_GET['action']==='login'){
-        login();
-    } elseif($_GET['action']==='disconnect'){
-        $_SESSION['name'] = NULL;
-        $_SESSION['id'] = NULL;
+    } else{ //If no action, show the main page
         home();
-    } else{
-        echo "Erreur : La page que vous cherchez n'existe pas.";
     }
-} else{
-    home();
+} catch (Exception $e){
+    echo "Erreur : ".$e->getMessage();
 }
+
 
 
 ?>

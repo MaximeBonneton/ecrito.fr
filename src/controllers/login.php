@@ -1,4 +1,5 @@
 <?php require_once('../src/ecritosModel.php') ?>
+<?php require_once('../src/mainModel.php') ?>
 
 <?php 
 function login(){

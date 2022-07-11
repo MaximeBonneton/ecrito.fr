@@ -1,0 +1,9 @@
+To do :
+- Ajouter la page gestion du compte utilisateur avec les fonctionnalités :
+    * Changer de nom
+    * Changer de mdp
+    * Changer les autres informations
+- Créer la page "Mes créations"
+    * Avec la posibilité de modifiction et de suprimer
+- Changer les dépendences entre Commentaire et Ecrito
+(pour que les écritos puisse être suprimer s'il y a commentaire + suprimer également le commentaire)
